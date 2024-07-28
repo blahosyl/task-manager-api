@@ -7,7 +7,7 @@ class TaskSerializer(serializers.ModelSerializer):
     """
     Define the task serializer classs
     """
-    owner = serializers.ReadOnlyField(source='author.username')
+    owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
@@ -33,7 +33,7 @@ class TaskSerializer(serializers.ModelSerializer):
         Check if the owner of the resource is making the request
         """
         request = self.context['request']
-        return request.user == obj.author
+        return request.user == obj.owner
 
 
     class Meta:
@@ -42,7 +42,7 @@ class TaskSerializer(serializers.ModelSerializer):
         """
         model = Task
         fields = [
-            'id', 'author', 'created_at', 'updated_at', 'title', 'excerpt',
+            'id', 'owner', 'created_at', 'updated_at', 'title', 'excerpt',
             'description', 'assignee', 'image', 'priority', 'status',
-            'due_date', 'owner', 'is_owner', 'profile_id', 'profile_image',
+            'due_date', 'is_owner', 'profile_id', 'profile_image',
         ]

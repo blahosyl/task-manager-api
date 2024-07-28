@@ -20,7 +20,7 @@ class Task(models.Model):
         ('COMPLETED', 'CompleteD'),
     ]
 
-    author = models.ForeignKey(User, blank=True,
+    owner = models.ForeignKey(User, blank=True,
                                     null=True,
                                     on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)

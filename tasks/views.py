@@ -14,4 +14,6 @@ class TaskList(generics.ListCreateAPIView):
     queryset = Task.objects.all().order_by('-created_at')
 
     def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
+        serializer.save(owner=self.request.user)
+
+
