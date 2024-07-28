@@ -2,6 +2,8 @@
 from rest_framework import serializers
 # Project-specific
 from .models import Task
+from watchers.models import Watcher
+
 
 class TaskSerializer(serializers.ModelSerializer):
     """
@@ -11,6 +13,7 @@ class TaskSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
+    watched_id = serializers.SerializerMethodField()
 
     def validate_image(self, value):
         """
@@ -35,6 +38,18 @@ class TaskSerializer(serializers.ModelSerializer):
         request = self.context['request']
         return request.user == obj.owner
 
+    def get_watched_id(self, obj):
+        """
+        Get tasks that the current user is watching
+        """
+        user = self.context['request'].user
+        if user.is_authenticated:
+            watched = Watcher.objects.filter(
+                owner=user, watched=obj
+            ).first()
+            return watched.id if watched else None
+        return None
+
 
     class Meta:
         """
@@ -44,5 +59,5 @@ class TaskSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'created_at', 'updated_at', 'title', 'excerpt',
             'description', 'assignee', 'image', 'priority', 'status',
-            'due_date', 'is_owner', 'profile_id', 'profile_image',
+            'due_date', 'is_owner', 'profile_id', 'profile_image', 'watched_id',
         ]
