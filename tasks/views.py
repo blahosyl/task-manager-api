@@ -1,4 +1,5 @@
 from rest_framework import permissions, generics
+from api_task_manager.permissions import IsOwnerOrReadOnly
 from .models import Task
 from .serializers import TaskSerializer
 
@@ -17,3 +18,10 @@ class TaskList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
 
+class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Retrieve a task and edit or delete it if you own it.
+    """
+    serializer_class = TaskSerializer
+    permission_classes = [IsOwnerOrReadOnly]
+    queryset = Task.objects.all().order_by('-created_at')
