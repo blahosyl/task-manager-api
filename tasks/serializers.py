@@ -11,8 +11,8 @@ class TaskSerializer(serializers.ModelSerializer):
     """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
-    profile_id = serializers.ReadOnlyField(source='owner.profile.id')
-    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
+    owner_id = serializers.ReadOnlyField(source='owner.profile.id')
+    owner_image = serializers.ReadOnlyField(source='assignee.profile.image.url')
     watched_id = serializers.SerializerMethodField()
 
     def validate_image(self, value):
@@ -59,5 +59,5 @@ class TaskSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'created_at', 'updated_at', 'title', 'excerpt',
             'description', 'assignee', 'image', 'priority', 'status',
-            'due_date', 'is_owner', 'profile_id', 'profile_image', 'watched_id',
+            'due_date', 'is_owner', 'owner_id', 'owner_image', 'watched_id',
         ]
