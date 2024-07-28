@@ -16,7 +16,8 @@ class TaskSerializer(serializers.ModelSerializer):
     assignee = serializers.CharField(source='assignee.username', 
                                     allow_blank=True,
                                     allow_null=True)
-    assignee_image = serializers.ReadOnlyField(source='assignee.profile.image.url')
+    assignee_image = serializers.ReadOnlyField(
+                                        source='assignee.profile.image.url')
     watched_id = serializers.SerializerMethodField()
 
     def validate_image(self, value):
