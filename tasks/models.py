@@ -8,9 +8,10 @@ class Task(models.Model):
     Default image set so that we can always reference image.url.
     """
     PRIORITY_OPTIONS = [
-        ('HIGH', 'High'),
-        ('MEDIUM', 'Medium'),
         ('LOW', 'Low'),
+        ('MEDIUM', 'Medium'),
+        ('HIGH', 'High'),
+
     ]
 
     STATUS_OPTIONS = [
@@ -25,7 +26,7 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
-    excerpt = models.CharField(max_length=1000)
+    excerpt = models.CharField(max_length=1000, blank=True,)
     description = models.TextField(blank=True)
     assignee = models.ForeignKey(User, blank=True,
                                     null=True,
