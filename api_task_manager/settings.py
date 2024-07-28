@@ -37,7 +37,7 @@ SECRET_KEY = 'django-insecure-fv%6*l#jmtt&trqo$lnm19dv)8fsr#0(tg(ikk_oj0oply5%+7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['8000-blahosyl-taskmanagerapi-n6cs0cecsh0.ws.codeinstitute-ide.net',]
 
 
 # Application definition
@@ -65,6 +65,8 @@ INSTALLED_APPS = [
     'profiles',
 ]
 
+# Allauth requires that the site ID is set (value is arbitrary)
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
