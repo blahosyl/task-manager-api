@@ -61,6 +61,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'dj_rest_auth.registration',
     'corsheaders',
+    # self-written apps
+    'profiles',
 ]
 
 
