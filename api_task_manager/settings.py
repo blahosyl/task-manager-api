@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     # self-written apps
     'profiles',
     'tasks',
+    'watch',
 ]
 
 # Allauth requires that the site ID is set (value is arbitrary)
