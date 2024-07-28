@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'corsheaders',
     # self-written apps
     'profiles',
+    'tasks',
 ]
 
 # Allauth requires that the site ID is set (value is arbitrary)
