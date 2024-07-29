@@ -75,7 +75,7 @@ SECRET_KEY = 'django-insecure-fv%6*l#jmtt&trqo$lnm19dv)8fsr#0(tg(ikk_oj0oply5%+7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-blahosyl-taskmanagerapi-n6cs0cecsh0.ws.codeinstitute-ide.net',]
+ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'),]
 
 
 # Application definition
