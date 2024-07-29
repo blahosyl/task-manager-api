@@ -18,7 +18,15 @@ class ProfileList(generics.ListAPIView):
     serializer_class = ProfileSerializer
 
     filter_backends = [
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        filters.SearchFilter,
+    ]
+    search_fields = [
+        'owner__username',
+        'firstname',
+        'lastname',
+        'role',
+        'about',
     ]
 
     filterset_fields = [
