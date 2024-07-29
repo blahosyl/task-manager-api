@@ -24,16 +24,19 @@ CLOUDINARY_STORAGE = {
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-# use session authentication in Dev & JSON Web Token auth in Prod
 REST_FRAMEWORK = {
+    # use session authentication in Dev & JSON Web Token auth in Prod
     'DEFAULT_AUTHENTICATION_CLASSES': [(
         'rest_framework.authentication.SessionAuthentication'
         if 'DEV' in os.environ
         else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
     )],
+    # paginate list view
     'DEFAULT_PAGINATION_CLASS':
     'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
+    # make date & time more human readable
+    'DATETIME_FORMAT': '%d %b %Y',
 }
 
 # render JSON in PROD
