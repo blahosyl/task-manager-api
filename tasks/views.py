@@ -1,4 +1,5 @@
-from rest_framework import permissions, generics
+from django.db.models import Count
+from rest_framework import permissions, generics, filters
 from api_task_manager.permissions import IsOwnerOrReadOnly
 from .models import Task
 from .serializers import TaskSerializer
@@ -12,8 +13,20 @@ class TaskList(generics.ListCreateAPIView):
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
     ]
-    queryset = Task.objects.all().order_by('-created_at')
+    queryset = Task.objects.annotate(
+        watchers_count=Count('watched', distinct=True),
+    ).order_by('-created_at')
 
+    filter_backends = [
+        filters.OrderingFilter
+    ]
+    ordering_fields = [
+        'watchers_count',
+        'updated_at',
+        'due_date',
+        'status',
+        'priority',
+    ]
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
@@ -24,4 +37,6 @@ class TaskDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     serializer_class = TaskSerializer
     permission_classes = [IsOwnerOrReadOnly]
-    queryset = Task.objects.all().order_by('-created_at')
+    queryset = Task.objects.annotate(
+        watchers_count=Count('watched', distinct=True),
+    )
