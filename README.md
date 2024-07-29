@@ -138,6 +138,9 @@ Front End based on [Moments](https://github.com/Code-Institute-Solutions/moments
 
 - [Django model field reference](https://docs.djangoproject.com/en/3.2/ref/models/fields/)
 - [Django `on_delete` options](https://www.queworx.com/django/django-on_delete/)
+- [Django REST Framework generic API views](https://www.django-rest-framework.org/api-guide/generic-views/)
+- [Django REST model field reference](https://www.django-rest-framework.org/api-guide/fields/)
+
 
 ### Text
 
