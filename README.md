@@ -100,6 +100,8 @@ Tasks should remain intact even when their creator (owner) or assignee are delet
 
 #### DRY
 
+#### Security
+
 ## Technologies used
 
 ### Languages used
