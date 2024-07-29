@@ -1,5 +1,6 @@
 
-from rest_framework import generics
+from django.db.models import Count
+from rest_framework import generics, filters
 from api_task_manager.permissions import IsOwnerOrReadOnly
 from .models import Profile
 from .serializers import ProfileSerializer
@@ -10,8 +11,19 @@ class ProfileList(generics.ListAPIView):
     List all profiles.
     No create view as profile creation is handled by django signals.
     """
-    queryset = Profile.objects.all()
+    queryset = Profile.objects.annotate(
+        # count tasks where this user is the assignee
+        tasks_count=Count('owner__assignee', distinct=True)
+    ).order_by('-created_at')
     serializer_class = ProfileSerializer
+
+    filterset_fields = [
+        'tasks_count',
+    ]
+
+    ordering_fields = [
+        'tasks_count',
+    ]
 
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):
