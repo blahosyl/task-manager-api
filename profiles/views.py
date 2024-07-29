@@ -17,12 +17,17 @@ class ProfileList(generics.ListAPIView):
     ).order_by('-created_at')
     serializer_class = ProfileSerializer
 
+    filter_backends = [
+        filters.OrderingFilter
+    ]
+
     filterset_fields = [
         'tasks_count',
     ]
 
     ordering_fields = [
         'tasks_count',
+        'created_at',
     ]
 
 
