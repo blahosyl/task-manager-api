@@ -18,8 +18,21 @@ class TaskList(generics.ListCreateAPIView):
     ).order_by('-created_at')
 
     filter_backends = [
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        filters.SearchFilter,
     ]
+    search_fields = [
+        'owner__username',
+        'owner__profile__firstname',
+        'owner__profile__lastname',
+        'assignee__username',
+        'assignee__profile__firstname',
+        'assignee__profile__lastname',
+        'title',
+        'excerpt',
+        'description',
+    ]
+
     ordering_fields = [
         'watchers_count',
         'updated_at',
