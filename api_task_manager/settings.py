@@ -24,6 +24,31 @@ CLOUDINARY_STORAGE = {
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
+# use session authentication in Dev & JSON Web Token auth in Prod
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [(
+        'rest_framework.authentication.SessionAuthentication'
+        if 'DEV' in os.environ
+        else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
+    )],
+}
+
+# enable token authentication
+REST_USE_JWT = True
+# make sure to send over HTTPS only
+JWT_AUTH_SECURE = True
+# access token
+JWT_AUTH_COOKIE = 'my-app-auth'
+# refresh token
+JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
+# allow front end and back end deployed to different platforms
+JWT_AUTH_SAMESITE = 'None'
+
+# override default serializer
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'api_task_manager.serializers.CurrentUserSerializer'
+}
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
