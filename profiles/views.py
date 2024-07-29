@@ -36,5 +36,8 @@ class ProfileDetail(generics.RetrieveUpdateAPIView):
     Retrieve or update a profile if you're the owner.
     """
     permission_classes = [IsOwnerOrReadOnly]
-    queryset = Profile.objects.all()
+    queryset = Profile.objects.annotate(
+        # count tasks where this user is the assignee
+        tasks_count=Count('owner__assignee', distinct=True)
+    ) 
     serializer_class = ProfileSerializer
