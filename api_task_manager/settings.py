@@ -77,6 +77,22 @@ DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'),]
 
+# allowed frontend apps
+if 'CLIENT_ORIGIN' in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+        os.environ.get('CLIENT_ORIGIN')
+    ]
+elif 'CLIENT_ORIGIN_DEV' in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+        os.environ.get('CLIENT_ORIGIN_DEV')
+    ]
+else:
+
+    CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",]
+
+# enable sending cookies in cross-origin requests 
+# so that users can get authentication functionality
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
