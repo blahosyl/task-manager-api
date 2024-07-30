@@ -13,6 +13,7 @@ class TaskSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     owner_id = serializers.ReadOnlyField(source='owner.profile.id')
     owner_image = serializers.ReadOnlyField(source='owner.profile.image.url')
+    assignee_username = serializers.ReadOnlyField(source='assignee.username')
     assignee_image = serializers.ReadOnlyField(
                                         source='assignee.profile.image.url')
     watched_id = serializers.SerializerMethodField()
@@ -61,7 +62,7 @@ class TaskSerializer(serializers.ModelSerializer):
         model = Task
         fields = [
             'id', 'owner', 'created_at', 'updated_at', 'title', 'excerpt',
-            'description', 'assignee', 'assignee_image', 'image', 'priority', 'status',
-            'due_date', 'is_owner', 'owner_id', 'owner_image', 'watched_id',
-            'watchers_count',
+            'description', 'assignee', 'assignee_username', 'assignee_image',
+            'image', 'priority', 'status', 'due_date', 'is_owner', 'owner_id',
+            'owner_image', 'watched_id', 'watchers_count',
         ]
