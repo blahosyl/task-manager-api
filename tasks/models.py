@@ -17,7 +17,7 @@ class Task(models.Model):
     STATUS_OPTIONS = [
         ('TO-DO', 'To do'),
         ('IN-PROGRESS', 'In progress'),
-        ('COMPLETED', 'CompleteD'),
+        ('DONE', 'Done'),
     ]
 
     owner = models.ForeignKey(User, blank=True,
