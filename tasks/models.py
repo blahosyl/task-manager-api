@@ -41,6 +41,7 @@ class Task(models.Model):
     status = models.CharField(max_length=255,
                                  choices=STATUS_OPTIONS,
                                  default='TO-DO')
+    # change from DateTimeField to Date Field suggested by tutor Thomas
     due_date = models.DateField(blank=True, null=True)
 
 
