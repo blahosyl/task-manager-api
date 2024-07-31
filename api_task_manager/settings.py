@@ -38,6 +38,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
     # make date & time more human readable
     'DATETIME_FORMAT': '%d %b %Y',
+    'DATE_FORMAT': '%d %b %Y',
 }
 
 # render JSON in PROD
