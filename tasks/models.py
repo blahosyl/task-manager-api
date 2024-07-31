@@ -41,7 +41,7 @@ class Task(models.Model):
     status = models.CharField(max_length=255,
                                  choices=STATUS_OPTIONS,
                                  default='TO-DO')
-    due_date = models.DateTimeField(blank=True, null=True)
+    due_date = models.DateField(blank=True, null=True)
 
 
     
