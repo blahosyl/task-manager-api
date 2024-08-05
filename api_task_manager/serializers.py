@@ -8,7 +8,7 @@ class CurrentUserSerializer(UserDetailsSerializer):
     """
     profile_id = serializers.ReadOnlyField(source='profile.id')
     profile_fistname = serializers.ReadOnlyField(
-        source='profile.profile_fistname')
+        source='profile.fistname')
     profile_lastname = serializers.ReadOnlyField(source='profile.lastname')
     profile_image = serializers.ReadOnlyField(source='profile.image.url')
 
