@@ -28,17 +28,19 @@ class TaskSerializer(serializers.ModelSerializer):
     def validate_image(self, value):
         """
         Image validation: no larger than 3 MB & no wider/higher than 4096 px
+        Only validate if there is an image
         """
-        if value.size > 3 * 1024 * 1024:
-            raise serializers.ValidationError('Image size larger than 3MB!')
-        if value.image.height > 4096:
-            raise serializers.ValidationError(
-                'Image height larger than 4096px!'
-            )
-        if value.image.width > 4096:
-            raise serializers.ValidationError(
-                'Image width larger than 4096px!'
-            )
+        if value != None:
+            if value.size > 3 * 1024 * 1024:
+                raise serializers.ValidationError('Image size larger than 3MB!')
+            if value.image.height > 4096:
+                raise serializers.ValidationError(
+                    'Image height larger than 4096px!'
+                )
+            if value.image.width > 4096:
+                raise serializers.ValidationError(
+                    'Image width larger than 4096px!'
+                )
         return value
 
     def get_is_owner(self, obj):
