@@ -33,7 +33,7 @@ class Task(models.Model):
                                     on_delete=models.SET_NULL,
                                     related_name='assignee')
     image = models.ImageField(
-        upload_to='images/', default='../default_post_w2n3ng', blank=True
+        upload_to='images/', blank=True, null=True
     )
     priority = models.CharField(max_length=255,
                                 choices=PRIORITY_OPTIONS,
