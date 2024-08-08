@@ -14,7 +14,14 @@
 
 ##### Task model
 
+
+TODO rethink this implementation
+
 Tasks should remain intact even when their creator (owner) or assignee are deleted (e.g., when a team memeber leaves an organization). In this case, the respective fields for the deleted user are set to `null`. Accordingly, the `owner` and `assignee` fields are allowed to be `null`.
+
+As described in the [Frontend documentation](https://github.com/blahosyl/task-manager-frontend/blob/main/README.md#tasks-without-an-image),
+ image upload is optional and there is no placeholder image added to tasks without images.
+ These improvements are reflected in the Task model and the `tasks` serializer.
 
 ##### Watch model
 
