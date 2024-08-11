@@ -22,7 +22,8 @@ class Task(models.Model):
 
     owner = models.ForeignKey(User, blank=True,
                                     null=True,
-                                    on_delete=models.SET_NULL)
+                                    on_delete=models.SET_NULL,
+                                    related_name='task_owner')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)

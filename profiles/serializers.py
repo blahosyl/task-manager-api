@@ -7,6 +7,7 @@ class ProfileSerializer(serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     assigned_count = serializers.ReadOnlyField()
     watched_count = serializers.ReadOnlyField()
+    owned_count = serializers.ReadOnlyField()
 
 
     def get_is_owner(self, obj):
@@ -18,5 +19,5 @@ class ProfileSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'created_at', 'updated_at', 'firstname', 'lastname',
             'pronouns', 'role', 'about', 'image', 'is_owner', 'assigned_count',
-            'watched_count',
+            'watched_count', 'owned_count',
         ]
