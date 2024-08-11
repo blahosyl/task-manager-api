@@ -14,7 +14,7 @@ class ProfileList(generics.ListAPIView):
     """
     queryset = Profile.objects.annotate(
         # count tasks where this user is the assignee
-        tasks_count=Count('owner__assignee', distinct=True)
+        assigned_count=Count('owner__assignee', distinct=True)
     ).order_by('-created_at')
     serializer_class = ProfileSerializer
 
@@ -38,7 +38,7 @@ class ProfileList(generics.ListAPIView):
     ]
 
     ordering_fields = [
-        'tasks_count',
+        'assigned_count',
         'created_at',
     ]
 
@@ -50,6 +50,6 @@ class ProfileDetail(generics.RetrieveUpdateAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Profile.objects.annotate(
         # count tasks where this user is the assignee
-        tasks_count=Count('owner__assignee', distinct=True)
+        assigned_count=Count('owner__assignee', distinct=True)
     ) 
     serializer_class = ProfileSerializer
