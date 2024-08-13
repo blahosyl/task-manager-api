@@ -46,11 +46,7 @@ class TaskList(generics.ListCreateAPIView):
     ]
 
     ordering_fields = [
-        'watchers_count',
-        'updated_at',
-        'due_date',
-        'status',
-        'priority',
+        '-created_at',
     ]
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

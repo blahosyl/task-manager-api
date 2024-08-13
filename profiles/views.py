@@ -42,7 +42,7 @@ class ProfileList(generics.ListAPIView):
     ]
 
     ordering_fields = [
-        'updated_at',
+        '-updated_at',
     ]
 
 
