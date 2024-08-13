@@ -42,10 +42,7 @@ class ProfileList(generics.ListAPIView):
     ]
 
     ordering_fields = [
-        'assigned_count',
-        'watched_count',
-        'owned_count',
-        'created_at',
+        'updated_at',
     ]
 
 
