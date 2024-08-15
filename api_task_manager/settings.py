@@ -113,6 +113,7 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'corsheaders',
     # self-written apps
+    'comments',
     'profiles',
     'tasks',
     'watchers',
