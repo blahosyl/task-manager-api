@@ -1,18 +1,17 @@
-#3rd party
 from rest_framework import serializers
-# Project-specific
 from .models import Task
 from watchers.models import Watcher
 
 
 class TaskSerializer(serializers.ModelSerializer):
     """
-    Define the task serializer classs
+    Define the task serializer class
     """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     owner_id = serializers.ReadOnlyField(source='owner.profile.id')
-    owner_firstname = serializers.ReadOnlyField(source='owner.profile.firstname')
+    owner_firstname = serializers.ReadOnlyField(
+            source='owner.profile.firstname')
     owner_lastname = serializers.ReadOnlyField(source='owner.profile.lastname')
     owner_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     assignee_username = serializers.ReadOnlyField(source='assignee.username')
@@ -30,16 +29,16 @@ class TaskSerializer(serializers.ModelSerializer):
         Image validation: no larger than 3 MB & no wider/higher than 4096 px
         Only validate if there is an image
         """
-        if value != None:
+        if value is not None:
             if value.size > 3 * 1024 * 1024:
-                raise serializers.ValidationError('Image size larger than 3MB!')
+                raise serializers.ValidationError('Image size larger than 3MB')
             if value.image.height > 4096:
                 raise serializers.ValidationError(
-                    'Image height larger than 4096px!'
+                    'Image height larger than 4096px'
                 )
             if value.image.width > 4096:
                 raise serializers.ValidationError(
-                    'Image width larger than 4096px!'
+                    'Image width larger than 4096px'
                 )
         return value
 
@@ -62,7 +61,6 @@ class TaskSerializer(serializers.ModelSerializer):
             return watched.id if watched else None
         return None
 
-
     class Meta:
         """
         Specify model & fields
@@ -73,6 +71,6 @@ class TaskSerializer(serializers.ModelSerializer):
             'description', 'assignee', 'assignee_username',
             'assignee_firstname', 'assignee_lastname', 'assignee_image',
             'image', 'priority', 'status', 'due_date', 'is_owner', 'owner_id',
-            'owner_firstname', 'owner_lastname', 'owner_image', 'watched_id', 
+            'owner_firstname', 'owner_lastname', 'owner_image', 'watched_id',
             'watchers_count',
         ]

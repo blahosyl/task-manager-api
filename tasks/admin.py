@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Task
 
-# Register your models here.
-
+# manage tasks in the admin panel
 admin.site.register(Task)

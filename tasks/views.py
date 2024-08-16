@@ -5,6 +5,7 @@ from api_task_manager.permissions import IsOwnerOrReadOnly
 from .models import Task
 from .serializers import TaskSerializer
 
+
 class TaskList(generics.ListCreateAPIView):
     """
     List tasks or create a task if logged in
@@ -48,6 +49,7 @@ class TaskList(generics.ListCreateAPIView):
     ordering_fields = [
         '-updated_at',
     ]
+
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
