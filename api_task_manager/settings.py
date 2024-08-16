@@ -75,6 +75,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# get allowe hosts from the environment
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'),]
 
 # allowed frontend apps
@@ -157,6 +158,8 @@ WSGI_APPLICATION = 'api_task_manager.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
+# use the built-in SQLite database in development
 if 'DEV' in os.environ:
     DATABASES = {
         'default': {
@@ -164,6 +167,7 @@ if 'DEV' in os.environ:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+# use the database specified in the environment in production
 else:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))

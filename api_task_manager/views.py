@@ -6,13 +6,15 @@ from .settings import (
 )
 
 
+# Welcome message by the APi when viewed in the browser or called from the FE
 @api_view()
 def root_route(request):
     return Response({
         "message": "Welcome to the Task Manager API!"
     })
 
-# dj-rest-auth logout view fix
+
+# Fix know dj-rest-auth logout view issue by defining a custom view
 @api_view(['POST'])
 def logout_route(request):
     response = Response()

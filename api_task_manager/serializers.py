@@ -14,6 +14,7 @@ class CurrentUserSerializer(UserDetailsSerializer):
 
     class Meta(UserDetailsSerializer.Meta):
         fields = UserDetailsSerializer.Meta.fields + (
-            'profile_id', 'profile_firstname', 'profile_lastname', 
+            'profile_id', 'profile_firstname', 'profile_lastname',
             'profile_image'
         )
+        
