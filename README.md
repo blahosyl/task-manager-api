@@ -10,6 +10,10 @@
 
 #### Data models
 
+The diagram below shows the custom models for this project, along with the User model by Allauth (only the fields that are utilized in this project are shown on the User model below).
+
+![Entity Relationship Diagram](/documentation-assets/readme/erd-task-manager.png)
+
 ##### Comments model
 
 ##### Profile model
