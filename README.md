@@ -10,24 +10,13 @@
 
 #### Data models
 
-##### Profile model
-
-##### Task model
-
-Tasks should remain intact even when their creator (owner) or assignee are deleted (e.g., when a team memeber leaves an organization). In this case, the respective fields for the deleted user are set to `null`. Accordingly, the `owner` and `assignee` fields are allowed to be `null`.
-
-##### Watch model
-
-#### Data models
+##### Comments model
 
 ##### Profile model
 
 ##### Task model
 
-
-TODO rethink this implementation
-
-Tasks should remain intact even when their creator (owner) or assignee are deleted (e.g., when a team memeber leaves an organization). In this case, the respective fields for the deleted user are set to `null`. Accordingly, the `owner` and `assignee` fields are allowed to be `null`.
+Tasks should remain intact even when their creator (owner) or assignee are deleted (e.g., when a team member leaves an organization). In this case, the respective fields for the deleted user are set to `null`. Accordingly, the `owner` and `assignee` fields are allowed to be `null`.
 
 As described in the [Frontend documentation](https://github.com/blahosyl/task-manager-frontend/blob/main/README.md#tasks-without-an-image),
  image upload is optional and there is no placeholder image added to tasks without images.
@@ -129,6 +118,9 @@ As described in the [Frontend documentation](https://github.com/blahosyl/task-ma
 
 ### Tools used
 
+- [markdownlint extension for VS Code](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint): Markdown linting & style checking
+- [Typos spell checker](https://open-vsx.org/extension/tekumara/typos-vscode)
+
 ## Deployment
 
 ### Prerequisites
@@ -161,7 +153,6 @@ Front End based on [Moments](https://github.com/Code-Institute-Solutions/moments
 - [Django `on_delete` options](https://www.queworx.com/django/django-on_delete/)
 - [Django REST Framework generic API views](https://www.django-rest-framework.org/api-guide/generic-views/)
 - [Django REST model field reference](https://www.django-rest-framework.org/api-guide/fields/)
-
 
 ### Text
 
