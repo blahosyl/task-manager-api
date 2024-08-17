@@ -119,6 +119,8 @@ As described in the [Frontend documentation](https://github.com/blahosyl/task-ma
 
 #### Security
 
+## Testing
+
 ## Technologies used
 
 ### Languages used
