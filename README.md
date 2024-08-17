@@ -14,6 +14,9 @@ The diagram below shows the custom models for this project, along with the User 
 
 ![Entity Relationship Diagram](/documentation-assets/readme/erd-task-manager.png)
 
+The assessment criteria specify "a minimum of ONE custom model" for the MVP.
+The current implementation  has 2 custom models (Profile an Task), and 2 models based on the walkthrough, which are slightly customized in the way they are used.
+
 ##### Comments model
 
 ##### Profile model
