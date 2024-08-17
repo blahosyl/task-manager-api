@@ -94,7 +94,13 @@ Back to  `README.md`(README.md)
 
 ## Bugs
 
+All bugs are tracked in [GitHub Issues](https://github.com/blahosyl/task-manager-api/issues?q=is%3Aissue+label%3Abug).
+
 ### Known bugs
 
+Known bugs are listed in [GitHub Issues](https://github.com/blahosyl/task-manager-api/issues?q=is%3Aissue+label%3Abug+is%3Aopen).
+
 ### Solved bugs
+
+Solved bugs are listed in [GitHub Issues](https://github.com/blahosyl/task-manager-api/issues?q=is%3Aissue+label%3Abug+is%3Aclosed).
 
