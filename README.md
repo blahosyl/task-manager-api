@@ -7,6 +7,8 @@
 
 # Task Manager API
 
+![API viewed in the browser](/documentation-assets/readme/api-preview.png)
+
 - [Front end GitHub repository](https://github.com/blahosyl/task-manager-frontend)
 - [Front end deployed app](https://pp5-task-manager-frontend-eebb66e2c99d.herokuapp.com/)
 - [Deployed API](https://pp5-task-manager-api-380974d293dd.herokuapp.com/)
