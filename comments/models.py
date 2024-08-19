@@ -16,5 +16,6 @@ class Comment(models.Model):
     class Meta:
         ordering = ['-created_at']
 
+# show comment body, task title & comment owner in the admin panel
     def __str__(self):
-        return self.content
+        return f'"{self.content}" on: {self.task} by: {self.owner}'
