@@ -15,6 +15,7 @@ class WatcherList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+
 class WatcherDetail(generics.RetrieveDestroyAPIView):
     """
     Retrieve a watch instance, or delete it by id if you own it.
