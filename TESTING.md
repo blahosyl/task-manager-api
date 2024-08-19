@@ -2,6 +2,8 @@
 <!-- markdownlint-disable MD033 -->
 <!-- Disable warnings about hard tabs -->
 <!-- markdownlint-disable MD010 -->
+<!-- Disable warnings about fenced code blocks -->
+<!-- markdownlint-disable MD040 -->
 
 # Testing the Task Manager
 
