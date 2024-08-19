@@ -2,6 +2,8 @@
 <!-- markdownlint-disable MD033 -->
 <!-- Disable warnings about hard tabs -->
 <!-- markdownlint-disable MD010 -->
+<!-- Disable warnings about fenced code blocks -->
+<!-- markdownlint-disable MD040 -->
 
 # Task Manager API
 
@@ -70,17 +72,101 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 ## Deployment
 
+The following instructions describe the deployment process with the tools used for this project.
+Of course, you can choose other tools/providers for the individual functions described below, e. g., a different Postgres database instead of Neon, or a different development environment instead of GitPod.
+Naturally, detailed instructions are only provided for the tools used in this project.
+
 ### Prerequisites
+
+- [GitPod](https://www.gitpod.io/) (or another IDE)
+- [Python 3](https://www.python.org/downloads/release/python-385/)
+- [pip](https://github.com/pypa/pip)
+- [git](https://git-scm.com/)
+- [Neon](https://neon.tech/) (or another Postgres database)
+- [Cloudinary](https://cloudinary.com/) (or another media hosting provider)
+- [Heroku](https://www.heroku.com/) (or another could platform)
 
 ### Fork the repository
 
+You can fork the repository by following these steps:
+
+1. Log in to [GitHub](https://github.com/) (if you don't have a GitHub account yet, you can [create one](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) for free).
+2. Navigate to the project website [https://github.com/blahosyl/task-manager-api](https://github.com/blahosyl/task-manager-api).
+3. Click on **Fork** in the upper right part of the screen.
+4. On the next page you have the possibility to change the repository name. To do this, simply write your desired name in the text field in the center part of the screen. You can also leave the name as it is.
+5. Click **Fork** in the bottom right part of the screen.
+
+>[!TIP]
+>If you do rename the repository, make sure to keep the [GitHub naming conventions](https://github.com/bcgov/BC-Policy-Framework-For-GitHub/blob/master/BC-Gov-Org-HowTo/Naming-Repos.md) in mind.
+
 ### Deploy in the development environment
+
+1. Open the repository in a new workspace in GitPod. GitPod will automatically run the Python virtual environment for you. If you're using a different development environment, see [this documentation](https://docs.python.org/3/library/venv.html).
+2. Install the required dependencies:
+
+	```
+	pip3 -r requirements.txt.
+	```
+
+3. To store access credentials and other secrets, create a file called `env.py` in your top-level project directory.
+Before adding any content to it, add `env.py` to `.gitignore` and commit your changes.
+This will prevent the contents of `env.py` from being pushed to the Git repository.
+4. Add the following information to your `env.py` file:
+    - `CLOUDINARY_URL` - you can find this in your [Cloudinary](https://cloudinary.com/) console under **API Keys**
+    - `DATABASE_URL`
+    - `ALLOWED_HOST` - the URL of your local server
+    - `CLIENT_ORIGIN_DEV` - the URL of your Frontend development server
+    - `SECRET_KEY`
+    - `DEV` - set this value to '1' in your development setup. This is used to determine if the app runs in Development or Production mode
+5. In `settings.py`, add your GitPod workspace URL to `ALLOWED_HOSTS`
+6. Run a migration to create your database tables:
+
+	```
+	python manage.py migrate
+	```
+
+7. Create a superuser (make sure you save the username and password you use here):
+
+	```
+	python manage.py createsuperuser
+	```
+
+8. Run the development server
+
+	```
+	python manage.py runserver
+	```
 
 ### Deploy to production
 
-#### Pre#deployment steps
+#### Pre-deployment steps
+
+Make sure to complete the following pre-deployment steps in your development environment, especially if you made changes to the project:
+
+1. (Re-)create a list of requirements by going to the terminal and typing `pip3 freeze > requirements.txt`. This populates your `requirements.txt` file with the list of required files.
+2. In `settings.py`, make sure `DEBUG=False` (or set conditionally based on the value of `DEV`)
+3. Commit and push your changes to GitHub.
 
 #### Steps on Heroku
+
+1. Log in to your [Heroku](https://www.heroku.com/) account (or create a new one if you have not done so yet).
+2. [Create a new Heroku app](https://dashboard.heroku.com/new-app) by selecting your region and app name.
+3. Under **Settings > Config Vars** in Heroku, add the following variables:
+    - `CLOUDINARY_URL` - you can find this in your [Cloudinary](https://cloudinary.com/) console under **API Keys**
+    - `DATABASE_URL`
+    - `SECRET_KEY`
+    - `ALLOWED_HOST` - your Front End app URL
+    - `CLIENT_ORIGIN_DEV` - the URL of your Frontend development server (if you want to use the deployed app with your Frontend Dev setup)
+    - `CLIENT_ORIGIN` - the URL of your deployed Frontend app
+    - `DISABLE_COLLECTSTATIC` – set value to 1 (this tells the deployed app not to collect static files)
+4. Under **Deploy > Deployment method** in Heroku, select **GitHub** and connect Heroku to your GitHub account.
+	- Type in your repository name, then click **Search**.
+	- When your repository appears, click **Connect** next to it.
+5. Under **Deploy > Manual deploy** in Heroku, select **Deploy branch** to deploy manually.
+	- Once the process is finished, the following message will appear:<br>
+	_Your app was successfully deployed_
+	- Click **View** under the message, and a new tab will appear with your deployed app.
+6. (optional) Under **Deploy > Automatic deploy** in Heroku, select **Enable Automatic Deploys** if you want your app to be rebuilt each time you push to the `main` branch of your GitHub repository (but make sure your `settings.py` file always has `DEBUG=False` when you do).
 
 ## Credits
 
@@ -123,4 +209,4 @@ Tutor Thomas [suggested](https://github.com/blahosyl/task-manager-frontend/issue
 - [The README of my first Code Institute project](https://github.com/blahosyl/academic-publishing)
 - [The README of my second Code Institute project](https://github.com/blahosyl/operator-game)
 - [The README of my third Code Institute project](https://github.com/blahosyl/dinner-party)
-- [The README of my fourth Code Institute project](https://github.com/blahosyl/spicy)
+- [The README of my fourth Code Institute project](https://github.com/blahosyl/task-manager-api)
