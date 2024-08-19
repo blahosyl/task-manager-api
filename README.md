@@ -10,7 +10,13 @@
 - [Front end GitHub repository](https://github.com/blahosyl/task-manager-frontend)
 - [Front end deployed app](https://pp5-task-manager-frontend-eebb66e2c99d.herokuapp.com/)
 - [Deployed API](https://pp5-task-manager-api-380974d293dd.herokuapp.com/)
-- [Project Kanban board](https://github.com/users/blahosyl/projects/6)
+
+See the development progress and further plans on the [Project Kanban board](https://github.com/users/blahosyl/projects/6).
+
+<!-- Shield.io badges -->
+![GitHub last commit](https://img.shields.io/github/last-commit/blahosyl/task-manager-api?color=red)
+![GitHub contributors](https://img.shields.io/github/contributors/blahosyl/task-manager-api?color=orange)
+![GitHub language count](https://img.shields.io/github/languages/count/blahosyl/task-manager-api?color=black)
 
 ## Table of contents
 
