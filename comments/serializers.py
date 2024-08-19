@@ -10,8 +10,9 @@ class CommentSerializer(serializers.ModelSerializer):
     """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
-    owner_firstname = serializers.ReadOnlyField(source='owner.profile.firstname')
-    owner_lastname = serializers.ReadOnlyField(source='owner.profile.lastname')    
+    owner_firstname = serializers.ReadOnlyField(
+            source='owner.profile.firstname')
+    owner_lastname = serializers.ReadOnlyField(source='owner.profile.lastname')
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     created_at = serializers.SerializerMethodField()
