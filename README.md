@@ -63,9 +63,12 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 ### Languages used
 
-- Django
-- Django ReSt Framework
-- Python 3.12
+- [Python](https://www.python.org/) 3.12.2
+
+### Frameworks used
+
+- [Django](https://pypi.org/project/Django/)
+- [Django ReSt Framework](https://pypi.org/project/djangorestframework/)
 
 ### Other dependencies used
 
