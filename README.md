@@ -63,11 +63,53 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 ### Languages used
 
+- Django
+- Django ReSt Framework
+- Python 3.12
+
 ### Other dependencies used
+
+- [`asgiref`](https://pypi.org/project/asgiref/) – asynchronous communication between web apps & servers
+- [`cloudinary`](https://pypi.org/project/cloudinary/) – storing images
+- [`dj-database-url`](https://pypi.org/project/dj-database-url/) – use an environment variable to configure databases
+- [`dj-rest-auth`](https://pypi.org/project/dj-rest-auth/) – access management
+- [`django-allauth`](https://pypi.org/project/django-allauth/) – access management
+- [`django-cloudinary-storage`](https://pypi.org/project/django-cloudinary-storage/) – interaction between Django and Cloudinary
+- [`django-cors-headers`](https://pypi.org/project/django-cors-headers/) – CORS (Cross-Origin Resource Sharing) headers in responses
+- [`django-filter`](https://pypi.org/project/django-filter/) – queryset filtering
+- [`djangorestframework-simplejwt`](https://pypi.org/project/djangorestframework-simplejwt/) – JSON Web Token authentication
+- [`gunicorn`](https://pypi.org/project/gunicorn/) – HTTP server for deployment
+- [`oauthlib`](https://pypi.org/project/oauthlib/) – framework-agnostic OAuth implementation
+- [`Pillow`](https://pypi.org/project/Pillow/) – image processing
+- [`psycopg2`](https://pypi.org/project/psycopg2/) – PostgreSQL database adapter
+- [`PyJWT`](https://pypi.org/project/PyJWT/) – encoding and decoding JWT tokens
+- [`python3-openid`](https://pypi.org/project/python3-openid/) – support for the OpenID decentralized identity system
+- [`pytz`](https://pypi.org/project/pytz/) – timezone calculation
+- [`requests-oauthlib`](https://pypi.org/project/requests-oauthlib/) – OAuthlib authentication support for Requests
+- [`sqlparse`](https://github.com/MikeR94/drf-api-league-hub/blob/main/documentation/readme_images/urls_pep8.png) – SQL parser
+- [`urllib3`](https://pypi.org/project/urllib3/) – HTTP client
 
 ### Tools used
 
-- [markdownlint extension for VS Code](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint): Markdown linting & style checking
+- [CI Python Linter](https://pep8ci.herokuapp.com/) – validate Python code
+- [Git](https://git-scm.com/) – version control
+- [GitHub](https://github.com/) – store the source files
+- [GitHub Desktop](https://desktop.github.com/) – GitHub UI
+- [GitHub Issues](https://github.com/features/issues) – feature management, bug tracking
+- [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) – project management
+- [GitHub TOC generator](http://github.com/3kh0/readme-toc/) – automatically generate a Markdown TOC
+- [GitHub web editor](https://github.com/)
+- [GitPod](https://gitpod.io/) – Integrated Development Environment
+- [Google Sheets](https://docs.google.com/spreadsheets) – planning user stories
+- [Heroku](https://heroku.com/) – host the production version of the app
+- [Lucidchart](https://www.lucidchart.com/) – make the ERD
+- [markdownlint extension for VS Code](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) – Markdown linting & style checking
+- [Preview](https://support.apple.com/guide/preview/welcome/mac) – cropping and annotating images
+- [Shields.io](https://shields.io/) – add badges to README
+- [Slack](https://slack.com/) – mentor communication
+- [Typos spell checker for VS Code](https://open-vsx.org/extension/tekumara/typos-vscode)
+
+- [markdownlint extension for VS Code](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) – Markdown linting & style checking
 - [Typos spell checker](https://open-vsx.org/extension/tekumara/typos-vscode)
 
 ## Deployment
@@ -79,12 +121,16 @@ Naturally, detailed instructions are only provided for the tools used in this pr
 ### Prerequisites
 
 - [GitPod](https://www.gitpod.io/) (or another IDE)
-- [Python 3](https://www.python.org/downloads/release/python-385/)
+- [Python 3.12](https://www.python.org/)
 - [pip](https://github.com/pypa/pip)
 - [git](https://git-scm.com/)
 - [Neon](https://neon.tech/) (or another Postgres database)
 - [Cloudinary](https://cloudinary.com/) (or another media hosting provider)
 - [Heroku](https://www.heroku.com/) (or another could platform)
+- Dependencies listed in [`requirements.txt`](requirements.txt)
+
+> [! WARNING]
+> The setup has been known to be prone to version conflicts, so use the exact versions specified in [`requirements.txt`](requirements.txt)
 
 ### Fork the repository
 
