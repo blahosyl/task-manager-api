@@ -5,7 +5,8 @@ from watchers.models import Watcher
 
 class TaskSerializer(serializers.ModelSerializer):
     """
-    Define the task serializer class
+    Serializer for the Profile model
+    Adds 12 extra fields when returning a list of Comment instances
     """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
