@@ -30,8 +30,8 @@ class ProfileList(generics.ListAPIView):
 
     filterset_fields = [
         # all profiles assigned to tasks the selected profile is watching
-       'owner__assignee__watched__owner__profile',
-   ]
+        'owner__assignee__watched__owner__profile',
+    ]
 
     search_fields = [
         'owner__username',
@@ -58,5 +58,5 @@ class ProfileDetail(generics.RetrieveUpdateAPIView):
         watched_count=Count('owner__watcher', distinct=True),
         # count tasks this user created
         owned_count=Count('owner__task_owner', distinct=True)
-    ) 
+    )
     serializer_class = ProfileSerializer
