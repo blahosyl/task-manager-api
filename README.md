@@ -1,14 +1,24 @@
-# Task Manager
+<!-- Disable warnings about inline HTML -->
+<!-- markdownlint-disable MD033 -->
+<!-- Disable warnings about hard tabs -->
+<!-- markdownlint-disable MD010 -->
 
-## UX/UI
+# Task Manager API
 
-### Strategy
+- [Front end GitHub repository](https://github.com/blahosyl/task-manager-frontend)
+- [Front end deployed app](https://pp5-task-manager-frontend-eebb66e2c99d.herokuapp.com/)
+- [Deployed API](https://pp5-task-manager-api-380974d293dd.herokuapp.com/)
+- [Project Kanban board](https://github.com/users/blahosyl/projects/6)
 
-### Scope
+## Table of contents
 
-### Structure
+## Database
 
-#### Data models
+NeonDB
+
+Developmental database user for testing (as connecting API to Frontend was very problematic for many)
+
+### Data models
 
 The diagram below shows the custom models for this project, along with the User model by Allauth (only the fields that are utilized in this project are shown on the User model below).
 
@@ -17,11 +27,11 @@ The diagram below shows the custom models for this project, along with the User 
 The assessment criteria specify "a minimum of ONE custom model" for the MVP.
 The current implementation  has 2 custom models (Profile an Task), and 2 models based on the walkthrough, which are slightly customized in the way they are used.
 
-##### Comments model
+#### Comments model
 
-##### Profile model
+#### Profile model
 
-##### Task model
+#### Task model
 
 Tasks should remain intact even when their creator (owner) or assignee are deleted (e.g., when a team member leaves an organization). In this case, the respective fields for the deleted user are set to `null`. Accordingly, the `owner` and `assignee` fields are allowed to be `null`.
 
@@ -29,79 +39,7 @@ As described in the [Frontend documentation](https://github.com/blahosyl/task-ma
  image upload is optional and there is no placeholder image added to tasks without images.
  These improvements are reflected in the Task model and the `tasks` serializer.
 
-##### Watch model
-
-#### Access management structure
-
-#### CRUD
-
-#### UI information design
-
-##### Navigation bar design
-
-##### Footer design
-
-### Skeleton
-
-#### Home page wireframes
-
-#### Task list wireframes
-
-#### Task detail wireframes
-
-### Surface
-
-#### Visual design
-
-##### Logo
-
-##### Minimalism
-
-##### Color schemes
-
-#### UX Improvements
-
-## Project Management | Agile Methodologies
-
-### Themes, Epics, Stories & Tasks
-
-### Estimation
-
-### Project Board
-
-### Labels
-
-#### Prioritization: MoSCoW
-
-#### Timeboxing
-
-#### Sprint planning
-
-#### Sprint retroactives
-
-## Features
-
-### Navigation bar
-
-### Footer
-
-#### Home page
-
-#### Task list
-
-##### Filtering
-
-##### Searching
-
-#### Task detail page
-
-#### Profile list
-
-#### Profile detail page
-
-### Access management
-
-### Admin Panel
+#### Watchers model
 
 ### Future features
 
@@ -116,6 +54,8 @@ As described in the [Frontend documentation](https://github.com/blahosyl/task-ma
 #### Security
 
 ## Testing
+
+See the document [`TESTING.md`](TESTING.md) for details.
 
 ## Technologies used
 

@@ -1,10 +1,17 @@
+<!-- Disable warnings about inline HTML -->
+<!-- markdownlint-disable MD033 -->
+<!-- Disable warnings about hard tabs -->
+<!-- markdownlint-disable MD010 -->
+
 # Testing the Task Manager
 
 Back to  `README.md`(README.md)
 
 ## Table of Contents
 
-## Testing User Stories
+## User Story Testing
+
+See the [front end documentation](https://github.com/blahosyl/task-manager-frontend/blob/main/TESTING.md#testing-user-stories).
 
 ## Code validation
 
@@ -60,9 +67,9 @@ Back to  `README.md`(README.md)
 
 ### Project-level Python validation
 
-##### `permissions.py`
+#### `permissions.py`
 
-##### `serializers.py`
+#### `serializers.py`
 
 #### `settings.py`
 
@@ -103,4 +110,3 @@ Known bugs are listed in [GitHub Issues](https://github.com/blahosyl/task-manage
 ### Solved bugs
 
 Solved bugs are listed in [GitHub Issues](https://github.com/blahosyl/task-manager-api/issues?q=is%3Aissue+label%3Abug+is%3Aclosed).
-
