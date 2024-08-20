@@ -11,9 +11,9 @@
 
 This repository contains the ReSt API backend to [On Fire 🔥 - the cheerful productivity app](https://github.com/blahosyl/task-manager-frontend), developed for the Advanced Front-end specialization at [Code Institute](https://codeinstitute.net/).
 
-Developer: [Dr. Sylvia Blaho](https://www.linkedin.com/in/blahosylvia/)
-
 ![API viewed in the browser](/documentation-assets/readme/api-preview.png)
+
+Developer: [Dr. Sylvia Blaho](https://www.linkedin.com/in/blahosylvia/)
 
 - [Deployed API](https://pp5-task-manager-api-380974d293dd.herokuapp.com/)
 - [Front end GitHub repository](https://github.com/blahosyl/task-manager-frontend)
@@ -81,8 +81,6 @@ Individual field names, types and and their specifications are also shown.
 The assessment criteria specify "a minimum of ONE custom model" for the MVP.
 The current implementation  has 2 heavily customized models (Profile an Task), and 2 models based on the walkthrough, which are slightly customized in the way they are used (Comment and Watchers).
 
-The Project model has not been part of the MVP, as development time for the 1st version of this project was only 3 and a half weeks.
-
 #### Comment model
 
 The Comment model is based on the walkthrough project, but 2 more extra fields are added to the serialzer: the first and last name of the owner's profile. This is used for conditionally rendering the user's name on the Front End depending on whether a `firstname` and `lastname` is filled in in their profile (the `username` is always present).
@@ -129,15 +127,28 @@ The standard User model is extended by `profile_lastname` and `profile_firstname
 
 ### Future features
 
+The Project model has not been part of the MVP, as development time for the 1st version of this project was only 3 and a half weeks.
+
 ### Code features
 
 #### Regular testing
 
-#### Adequate commenting
+Code was manually tested and validated throughout development. 
+At the end of the development process, a final, comprehensive round of testing and validating was completed.
+The results are detailed in [TESTING.md](TESTING.md).
 
-#### DRY
+#### Adequate 
+
+Apart from making sure that the app functions as intended, I have also taken special care to make sure the code is well organized and appropriately commented. Since I am just becoming familiar with Django REST Framework (and dealing with executive functioning issues), I have erred on the side of "more is more" for code comments and docstrings for methods that were new to me.
 
 #### Security
+
+Sensitive information such as secret keys, Cloudinary URL and Database URL are stored in environment variables that are never committed to GitHub.
+They are not sent through unsecured channels, and not written down on paper.
+
+All passwords are stored in a password manager, and not written down in plain text electronically or on physical paper.
+
+Unfortunately, the infrastructure for project submission at Code Institute requires the admin credentials to be submitted in plain text.
 
 ## API endpoints
 
@@ -319,12 +330,6 @@ Tutor Thomas [suggested](https://github.com/blahosyl/task-manager-frontend/issue
 - [Django `on_delete` options](https://www.queworx.com/django/django-on_delete/)
 - [Django REST Framework generic API views](https://www.django-rest-framework.org/api-guide/generic-views/)
 - [Django REST model field reference](https://www.django-rest-framework.org/api-guide/fields/)
-
-### Text
-
-### Media
-
-#### Images
 
 ### Readmes
 
