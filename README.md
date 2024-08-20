@@ -69,7 +69,7 @@ As described in the [Frontend documentation](https://github.com/blahosyl/task-ma
 
 ## API endpoints
 
-The available endpoints, paths and actions are described under [ Manual feature testing in`TESTING.md`](TESTING.md/#manual-feature-testing) for details.
+The available endpoints, paths and actions are described under [Manual feature testing in`TESTING.md`](TESTING.md/#manual-feature-testing) for details.
 
 ## Testing
 
