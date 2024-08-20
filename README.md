@@ -5,7 +5,7 @@
 <!-- Disable warnings about fenced code blocks -->
 <!-- markdownlint-disable MD040 -->
 
-# Task Manager API
+# On Fire 🔥 - the cheerful productivity app API
 
 This repository contains the ReSt API backend to [On Fire 🔥 - the cheerful productivity app](https://github.com/blahosyl/task-manager-frontend), developed for the Advanced Front-end specialization at [Code Institute](https://codeinstitute.net/).
 
