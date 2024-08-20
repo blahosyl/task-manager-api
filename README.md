@@ -36,24 +36,58 @@ Developmental database user for testing (as connecting API to Frontend was very 
 
 The diagram below shows the custom models for this project, along with the User model by Allauth (only the fields that are utilized in this project are shown on the User model below).
 
+Individual field names, types and and their specifications are also shown.
+
 ![Entity Relationship Diagram](/documentation-assets/readme/erd-task-manager.png)
 
 The assessment criteria specify "a minimum of ONE custom model" for the MVP.
-The current implementation  has 2 custom models (Profile an Task), and 2 models based on the walkthrough, which are slightly customized in the way they are used.
+The current implementation  has 2 heavily customized models (Profile an Task), and 2 models based on the walkthrough, which are slightly customized in the way they are used (Comment and Watchers).
 
-#### Comments model
+The Project model has not been part of the MVP, as development time for the 1st version of this project was only 3 and a half weeks.
+
+#### Comment model
+
+The Comment model is based on the walkthrough project, but 2 more extra fields are added to the serialzer: the first and last name of the owner's profile. This is used for conditionally rendering the user's name on the Front End depending on whether a `firstname` and `lastname` is filled in in their profile (the `username` is always present).
+
+1. show first and last name if both are available
+2. show first or last name if either are available
+3. show username if neither are available
+
+In some cases, 1. is shortened to only show the first name even if a last name is available.
 
 #### Profile model
 
+The Profile is heavily customized compared to the walkthrough project: not only are many more fields specified in it, but the extra fields specified in the serializer also work in a different way.
+
+These are not only used for filtering in the API, but also for in custom hooks that refresh individual components of the Task List pages without reloading the page.
+
+Filtering based on the extra fields in the `profile` serializer forms the frame of displaying tasks on 3 different pages in the FrontEnd.
+
 #### Task model
 
-Tasks should remain intact even when their creator (owner) or assignee are deleted (e.g., when a team member leaves an organization). In this case, the respective fields for the deleted user are set to `null`. Accordingly, the `owner` and `assignee` fields are allowed to be `null`.
+The task model is the most extensive one of the app – unsurprisingly, since its primary purpose is tracking tasks. It is based on the Post model of the walkthough project, but it differs significantly in the number and type of fields it has, how fields relate to other models, how they are configured and how they are used in the frontend.
+
+The task model has 2 fields that relate to the User model: in addition to `owner` (the user creating the task), an `assignee` can also be spefcified. This is extensively used for filtering and presenting data in the frontend.
+
+A further difference is that tasks should remain intact even when their creator (owner) or assignee are deleted (e.g., when a team member leaves an organization). In this case, the respective fields for the deleted user are set to `null`. Accordingly, the `owner` and `assignee` fields are allowed to be `null`.
+
+A `due_date` field is added to the model. This is used to indicate overdue tasks in the frontend with a range of 🔥 emojis that features throughout the app branding. The longer the due date is in the past, the more 🔥 emojis appear on a task.
+
+The `status` field is restricted to a pre-defined range, and it is used to automatically sort tasks into the corresponding columns in the frontend.
+
+The `priority` field is also based on a pre-defined range, and is used to automatically change the color scheme of individual tasks in the frontend.
 
 As described in the [Frontend documentation](https://github.com/blahosyl/task-manager-frontend/blob/main/README.md#tasks-without-an-image),
  image upload is optional and there is no placeholder image added to tasks without images.
  These improvements are reflected in the Task model and the `tasks` serializer.
 
 #### Watchers model
+
+This model is based on Like in the walkthrough project, but it has additional uses beyond statically filtering tasks: changes in Watchers instances trigger custom hooks refetching Profile and Task data without refreshing the page in the frontend.
+
+#### User model
+
+The standard User model is extended by `profile_lastname` and `profile_firstname` fields in the `task_manager_api` serializer. These fields are used to render users' names thourhout the app, as described in the Comments model section.
 
 ### Future features
 
