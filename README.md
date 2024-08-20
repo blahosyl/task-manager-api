@@ -28,7 +28,8 @@ See the development progress and further plans on the [Project Kanban board](htt
 
 ## Table of contents
 
-- [Database](#database)
+- [Database structure](#data-structure)
+  * [Database](#database)
   * [Data models](#data-models)
     + [Comment model](#comment-model)
     + [Profile model](#profile-model)
@@ -61,9 +62,11 @@ See the development progress and further plans on the [Project Kanban board](htt
 
 <small><i><a href='http://github.com/3kh0/readme-toc/'>Table of contents generated with readme-toc</a></i></small>
 
-## Database
+## Data structure
 
-[Neon](https://neon.tech/), a serverless Postgres database was used for Production, while the built-in dababase for used for API development & testing.
+### Database
+
+[Neon](https://neon.tech/), a serverless Postgres database was used for Production, while the built-in [SQLite](https://www.sqlite.org/index.html) dababase for used for API development & testing.
 
 ### Data models
 
@@ -74,11 +77,11 @@ Individual field names, types and and their specifications are also shown.
 ![Entity Relationship Diagram](/documentation-assets/readme/erd-task-manager.png)
 
 The assessment criteria specify "a minimum of ONE custom model" for the MVP.
-The current implementation  has 2 heavily customized models (Profile an Task), and 2 models based on the walkthrough, which are slightly customized in the way they are used (Comment and Watchers).
+The current implementation  has 2 heavily customized models (Profile and Task), and 2 models based on the [walkthrough project](https://github.com/Code-Institute-Solutions/drf-api), which are slightly customized in the way they are used (Comment and Watchers).
 
 #### Comment model
 
-The Comment model is based on the walkthrough project, but 2 more extra fields are added to the serialzer: the first and last name of the owner's profile. This is used for conditionally rendering the user's name on the Front End depending on whether a `firstname` and `lastname` is filled in in their profile (the `username` is always present).
+The Comment model is based on the [walkthrough project](https://github.com/Code-Institute-Solutions/drf-api), but 2 more extra fields are added to the serialzer: the first and last name of the owner's profile. This is used for conditionally rendering the user's name on the Front End depending on whether a `firstname` and `lastname` is filled in in their profile (the `username` is always present).
 
 1. show first and last name if both are available
 2. show first or last name if either are available
@@ -88,21 +91,21 @@ In some cases, 1. is shortened to only show the first name even if a last name i
 
 #### Profile model
 
-The Profile is heavily customized compared to the walkthrough project: not only are many more fields specified in it, but the extra fields specified in the serializer also work in a different way.
+The Profile is heavily customized compared to the [walkthrough project](https://github.com/Code-Institute-Solutions/drf-api): not only are many more fields specified in it, but the extra fields specified in the serializer also work in a different way.
 
-These are not only used for filtering in the API, but also for in custom hooks that refresh individual components of the Task List pages without reloading the page.
+These are not only used for filtering in the API, but also for in custom hooks in the frontend that refresh individual components of the Task List pages without reloading the page.
 
-Filtering based on the extra fields in the `profile` serializer forms the frame of displaying tasks on 3 different pages in the FrontEnd.
+Filtering based on the extra fields in the `profile` serializer forms the frame of displaying tasks on 3 different pages in the frontend.
 
 #### Task model
 
 The task model is the most extensive one of the app – unsurprisingly, since its primary purpose is tracking tasks. It is based on the Post model of the walkthough project, but it differs significantly in the number and type of fields it has, how fields relate to other models, how they are configured and how they are used in the frontend.
 
-The task model has 2 fields that relate to the User model: in addition to `owner` (the user creating the task), an `assignee` can also be spefcified. This is extensively used for filtering and presenting data in the frontend.
+The Task model has 2 fields that relate to the User model: in addition to `owner` (the user creating the task), an `assignee` can also be spefcified. This is extensively used for filtering and presenting data in the frontend.
 
 A further difference is that tasks should remain intact even when their creator (owner) or assignee are deleted (e.g., when a team member leaves an organization). In this case, the respective fields for the deleted user are set to `null`. Accordingly, the `owner` and `assignee` fields are allowed to be `null`.
 
-A `due_date` field is added to the model. This is used to indicate overdue tasks in the frontend with a range of 🔥 emojis that features throughout the app branding. The longer the due date is in the past, the more 🔥 emojis appear on a task.
+A `due_date` field is added to the model. This is used to indicate overdue tasks in the frontend with a range of 🔥 emojis that features throughout the app branding (the longer the due date is in the past, the more 🔥 emojis appear on a task).
 
 The `status` field is restricted to a pre-defined range, and it is used to automatically sort tasks into the corresponding columns in the frontend.
 
@@ -114,7 +117,7 @@ As described in the [Frontend documentation](https://github.com/blahosyl/task-ma
 
 #### Watchers model
 
-This model is based on Like in the walkthrough project, but it has additional uses beyond statically filtering tasks: changes in Watchers instances trigger custom hooks refetching Profile and Task data without refreshing the page in the frontend.
+This model is based on Like in the [walkthrough project](https://github.com/Code-Institute-Solutions/drf-api), but it has additional uses beyond statically filtering tasks: changes in Watchers instances trigger custom hooks refetching Profile and Task data without refreshing the page in the frontend.
 
 #### User model
 
@@ -122,7 +125,7 @@ The standard User model is extended by `profile_lastname` and `profile_firstname
 
 ### Future features
 
-The Project model has not been part of the MVP, as development time for the 1st version of this project was only 3 and a half weeks.
+The Project model has not been part of the MVP, as development time for the 1st version of this project was only 3 and a half weeks. It was thus relegated to version 2 of the app.
 
 ### Code features
 
@@ -224,7 +227,7 @@ Naturally, detailed instructions are only provided for the tools used in this pr
 - [Heroku](https://www.heroku.com/) (or another could platform)
 - Dependencies listed in [`requirements.txt`](requirements.txt)
 
-> [! WARNING]
+> [!WARNING]
 > The setup has been known to be prone to version conflicts, so use the exact versions specified in [`requirements.txt`](requirements.txt)
 
 ### Fork the repository
