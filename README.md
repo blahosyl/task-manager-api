@@ -38,8 +38,6 @@ See the development progress and further plans on the [Project Kanban board](htt
   * [Future features](#future-features)
   * [Code features](#code-features)
     + [Regular testing](#regular-testing)
-    + [Adequate commenting](#adequate-commenting)
-    + [DRY](#dry)
     + [Security](#security)
 - [API endpoints](#api-endpoints)
 - [Testing](#testing)
@@ -59,9 +57,6 @@ See the development progress and further plans on the [Project Kanban board](htt
   * [Code credits](#code-credits)
   * [Related advice](#related-advice)
   * [Study/lookup sources](#studylookup-sources)
-  * [Text](#text)
-  * [Media](#media)
-    + [Images](#images)
   * [Readmes](#readmes)
 
 <small><i><a href='http://github.com/3kh0/readme-toc/'>Table of contents generated with readme-toc</a></i></small>
@@ -133,11 +128,11 @@ The Project model has not been part of the MVP, as development time for the 1st 
 
 #### Regular testing
 
-Code was manually tested and validated throughout development. 
+Code was manually tested and validated throughout development.
 At the end of the development process, a final, comprehensive round of testing and validating was completed.
 The results are detailed in [TESTING.md](TESTING.md).
 
-#### Adequate 
+#### Adequate
 
 Apart from making sure that the app functions as intended, I have also taken special care to make sure the code is well organized and appropriately commented. Since I am just becoming familiar with Django REST Framework (and dealing with executive functioning issues), I have erred on the side of "more is more" for code comments and docstrings for methods that were new to me.
 
