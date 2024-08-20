@@ -40,7 +40,7 @@ All self-written or modified Python files in the project were validated with the
 Some minor errors were found, which were corrected ([#22](https://github.com/blahosyl/task-manager-api/issues/22)).
 The present version of the project contains no errors.
 
-Validation screenshots are found in [this folder](/documentation-assets/validation/)
+Validation screenshots are found in [this folder](/documentation-assets/validation/).
 
 ## Manual feature testing
 
