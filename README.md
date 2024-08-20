@@ -119,13 +119,11 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Heroku](https://heroku.com/) – host the production version of the app
 - [Lucidchart](https://www.lucidchart.com/) – make the ERD
 - [markdownlint extension for VS Code](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) – Markdown linting & style checking
+- [Neon](https://neon.tech/) – serverless Postgres database
 - [Preview](https://support.apple.com/guide/preview/welcome/mac) – cropping and annotating images
 - [Shields.io](https://shields.io/) – add badges to README
 - [Slack](https://slack.com/) – mentor communication
 - [Typos spell checker for VS Code](https://open-vsx.org/extension/tekumara/typos-vscode)
-
-- [markdownlint extension for VS Code](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) – Markdown linting & style checking
-- [Typos spell checker](https://open-vsx.org/extension/tekumara/typos-vscode)
 
 ## Deployment
 
