@@ -66,7 +66,9 @@ Validation screenshots are found in [this folder](/documentation-assets/validati
 
 ## Automated testing
 
-Since the `tasks` app is the most important one of the API, automated testing concentrated on this app. A total of are present, all pass as expected without issues.
+Since the `tasks` app is the most important one of the API, automated testing concentrated on this app. A total of 7 are present, all pass as expected without issues.
+
+![All automated tests pass witout issues](/documentation-assets/automated-tests/python-automated-tests.png)
 
 ## Bugs
 
