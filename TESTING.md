@@ -66,6 +66,8 @@ Validation screenshots are found in [this folder](/documentation-assets/validati
 
 ## Automated testing
 
+Since the `tasks` app is the most important one of the API, automated testing concentrated on this app. A total of are present, all pass as expected without issues.
+
 ## Bugs
 
 All bugs are tracked in [GitHub Issues](https://github.com/blahosyl/task-manager-api/issues?q=is%3Aissue+label%3Abug).
