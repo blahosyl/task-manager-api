@@ -7,11 +7,15 @@
 
 # Task Manager API
 
+This repository contains the ReSt API backend to [On Fire 🔥 - the cheerful productivity app](https://github.com/blahosyl/task-manager-frontend), developed for the Advanced Front-end specialization at [Code Institute](https://codeinstitute.net/).
+
+Developer: [Dr. Sylvia Blaho](https://www.linkedin.com/in/blahosylvia/)
+
 ![API viewed in the browser](/documentation-assets/readme/api-preview.png)
 
+- [Deployed API](https://pp5-task-manager-api-380974d293dd.herokuapp.com/)
 - [Front end GitHub repository](https://github.com/blahosyl/task-manager-frontend)
 - [Front end deployed app](https://pp5-task-manager-frontend-eebb66e2c99d.herokuapp.com/)
-- [Deployed API](https://pp5-task-manager-api-380974d293dd.herokuapp.com/)
 
 See the development progress and further plans on the [Project Kanban board](https://github.com/users/blahosyl/projects/6).
 
