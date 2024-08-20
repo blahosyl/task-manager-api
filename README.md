@@ -4,6 +4,8 @@
 <!-- markdownlint-disable MD010 -->
 <!-- Disable warnings about fenced code blocks -->
 <!-- markdownlint-disable MD040 -->
+<!-- Disable warnings about list markers -->
+<!-- markdownlint-disable MD004 -->
 
 # On Fire 🔥 - the cheerful productivity app API
 
@@ -26,11 +28,47 @@ See the development progress and further plans on the [Project Kanban board](htt
 
 ## Table of contents
 
+- [Database](#database)
+  * [Data models](#data-models)
+    + [Comment model](#comment-model)
+    + [Profile model](#profile-model)
+    + [Task model](#task-model)
+    + [Watchers model](#watchers-model)
+    + [User model](#user-model)
+  * [Future features](#future-features)
+  * [Code features](#code-features)
+    + [Regular testing](#regular-testing)
+    + [Adequate commenting](#adequate-commenting)
+    + [DRY](#dry)
+    + [Security](#security)
+- [API endpoints](#api-endpoints)
+- [Testing](#testing)
+- [Technologies used](#technologies-used)
+  * [Languages used](#languages-used)
+  * [Frameworks used](#frameworks-used)
+  * [Other dependencies used](#other-dependencies-used)
+  * [Tools used](#tools-used)
+- [Deployment](#deployment)
+  * [Prerequisites](#prerequisites)
+  * [Fork the repository](#fork-the-repository)
+  * [Deploy in the development environment](#deploy-in-the-development-environment)
+  * [Deploy to production](#deploy-to-production)
+    + [Pre-deployment steps](#pre-deployment-steps)
+    + [Steps on Heroku](#steps-on-heroku)
+- [Credits](#credits)
+  * [Code credits](#code-credits)
+  * [Related advice](#related-advice)
+  * [Study/lookup sources](#studylookup-sources)
+  * [Text](#text)
+  * [Media](#media)
+    + [Images](#images)
+  * [Readmes](#readmes)
+
+<small><i><a href='http://github.com/3kh0/readme-toc/'>Table of contents generated with readme-toc</a></i></small>
+
 ## Database
 
-NeonDB
-
-Developmental database user for testing (as connecting API to Frontend was very problematic for many)
+[Neon](https://neon.tech/), a serverless Postgres database was used for Production, while the built-in dababase for used for API development & testing.
 
 ### Data models
 

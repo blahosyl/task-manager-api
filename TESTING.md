@@ -4,12 +4,29 @@
 <!-- markdownlint-disable MD010 -->
 <!-- Disable warnings about fenced code blocks -->
 <!-- markdownlint-disable MD040 -->
+<!-- Disable warnings about list markers -->
+<!-- markdownlint-disable MD004 -->
 
-# Testing the Task Manager
+# Testing the API
 
 Back to  `README.md`(README.md)
 
 ## Table of Contents
+
+- [User Story Testing](#user-story-testing)
+- [Code validation](#code-validation)
+  * [Python validation](#python-validation)
+- [Manual feature testing](#manual-feature-testing)
+  * [Tasks manual testing](#tasks-manual-testing)
+  * [Comments manual testing](#comments-manual-testing)
+  * [Profiles manual testing](#profiles-manual-testing)
+  * [Watchers manual testing](#watchers-manual-testing)
+- [Automated testing](#automated-testing)
+- [Bugs](#bugs)
+  * [Known bugs](#known-bugs)
+  * [Solved bugs](#solved-bugs)
+
+<small><i><a href='http://github.com/3kh0/readme-toc/'>Table of contents generated with readme-toc</a></i></small>
 
 ## User Story Testing
 
@@ -68,7 +85,7 @@ Validation screenshots are found in [this folder](/documentation-assets/validati
 
 Since the `tasks` app is the most important one of the API, automated testing concentrated on this app. A total of 7 are present, all pass as expected without issues.
 
-![All automated tests pass witout issues](/documentation-assets/automated-tests/python-automated-tests.png)
+![All automated tests pass without issues](/documentation-assets/automated-tests/python-automated-tests.png)
 
 ## Bugs
 
