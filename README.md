@@ -67,6 +67,10 @@ As described in the [Frontend documentation](https://github.com/blahosyl/task-ma
 
 #### Security
 
+## API endpoints
+
+The available endpoints, paths and actions are described under [ Manual feature testing in`TESTING.md`](TESTING.md/#manual-feature-testing) for details.
+
 ## Testing
 
 See the document [`TESTING.md`](TESTING.md) for details.

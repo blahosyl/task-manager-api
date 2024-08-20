@@ -19,6 +19,10 @@ See the [front end documentation](https://github.com/blahosyl/task-manager-front
 
 ### Python validation
 
+All self-written or modified Python files in the project were validated with the [Code Institute PEP8 Linter](https://pep8ci.herokuapp.com/).
+Some minor errors were found, which were corrected ([#22](https://github.com/blahosyl/task-manager-api/issues/22)).
+The present version of the project contains no errors.
+
 #### `profiles` app Python validation
 
 ##### `admin.py` | `profiles`
@@ -79,25 +83,44 @@ See the [front end documentation](https://github.com/blahosyl/task-manager-front
 
 ##### `views.py`
 
-##### `wsgi.py`
-
-? changed?
-
 ## Manual feature testing
 
 ### Tasks manual testing
 
+|API name	|Method	|Path|Expected result | Result|
+|---	|---	|---	|---				|:---:	|
+|Task List |GET|`/tasks`|Get all tasks|✅|
+|Create Task  |POST|`/tasks`|Create new task|✅|
+|Task Detail  |GET|`/tasks/${id}`|View existing task|✅|
+|Edit Task  |PUT|`/tasks/${id}`|Edit existing task|✅|
+|Delete Task  |DELETE|`/tasks/${id}`|Delete existing task|✅|
+
+### Comments manual testing
+
+|API name	|Method	|Path|Expected result | Result|
+|---	|---	|---	|---				|:---:	|
+|Comment List |GET|`/comments`|Get all comments|✅|
+|Create Comment  |POST|`/comments`|Create new comment|✅|
+|Comment Detail  |GET|`/comments/${id}`|View existing comment|✅|
+|Edit Comment  |PUT|`/comments/${id}`|Edit existing comment|✅|
+|Delete Comment  |DELETE|`/comments/${id}`|Delete existing comment|✅|
+
 ### Profiles manual testing
+
+|API name	|Method	|Path|Expected result | Result|
+|---	|---	|---	|---				|:---:	|
+|Profile List |GET|`/profiles`|Get all profiles|✅|
+|Profile Detail  |GET|`/profiles/${id}`|View existing profile|✅|
+|Edit Profile  |PUT|`/profiles/${id}`|Edit existing profile|✅|
 
 ### Watchers manual testing
 
-### Authentication manual testing
-
-#### Signin
-
-#### Signout age
-
-#### Signup
+|API name	|Method	|Path|Expected result | Result|
+|---	|---	|---	|---				|:---:	|
+|Watchers List |GET|`/watchers`|Get all watcher instances|✅|
+|Watch  |POST|`/watchers`|Create new watcher instance|✅|
+|Watcher Detail  |GET|`/watchers/${id}`|View existing watcher instance|✅|
+|Unwatch|DELETE|`/watchers/${id}`|Delete existing watcher instance|✅|
 
 ## Automated testing
 
